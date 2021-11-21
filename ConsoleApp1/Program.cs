@@ -10,25 +10,16 @@ namespace ConsoleApp1
     {
         public static bool IsPrime(int n)
         {
-            bool result = false;
-            int[] arr = new int[4] { 2, 3, 5, 7 };
-            if (n <= 1)
+            bool result = true;
+            if (n <= 1) return false;
+            for (int i = 2; i < n; i++) 
             {
-                return result;
-            }
-            if (n == 2 || n == 3 || n == 5 || n == 7)
-            {
-                result = true;
-                return result;
-            }
-            for (int i = 1; i < 4; i++)
-            {
-                if (n % arr[i] == 0)
+                if (n % i == 0)
                 {
-                    return result;
+                    result = false;
+                    break;
                 }
             }
-            result = true;
             return result;
             // TODO
         }
